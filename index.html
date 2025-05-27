@@ -4,68 +4,155 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ankur Kumar | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav select {
+      padding: 10px;
+      font-size: 1rem;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      animation: fadeIn 2s ease-in;
+    }
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #1abc9c;
+      margin-bottom: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: slideUp 1s ease-out;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Ankur Kumar</h1>
-    <p>BS Data Science and Engineering | AI Researcher</p>
+    <p>Data Science & AI Researcher</p>
     <nav>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
+      <select onchange="location = this.value;">
+        <option value="#">Navigate</option>
+        <option value="#about">About Me</option>
+        <option value="#education">Education</option>
+        <option value="#experience">Experience</option>
+        <option value="#projects">Projects</option>
+        <option value="#skills">Skills</option>
+        <option value="#contact">Contact</option>
+      </select>
     </nav>
   </header>
 
-  <section id="education">
+  <div class="hero">
+    <img src="images/profile.jpg" alt="Profile Picture">
+    <h1>Hello, I'm <span style="color:#1abc9c">Ankur</span></h1>
+    <p>Welcome to my interactive portfolio!</p>
+  </div>
+
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>I am a final-year Data Science student passionate about Deep Learning, Reinforcement Learning, and Bias Mitigation in AI models. I’ve worked on impactful research projects and enjoy solving real-world problems using machine learning.</p>
+  </section>
+
+  <section id="education" class="card">
     <h2>Education</h2>
-    <p><strong>Indian Institute of Science Education and Research, Bhopal</strong> — BS Data Science and Engineering, CPI: 9.03 (2021–2025)</p>
-    <p><strong>St. Paul’s School, New Delhi</strong> — Senior Secondary (97%), Secondary (94.4%)</p>
+    <p><strong>IISER Bhopal</strong> — BS in Data Science and Engineering (CPI: 9.03)</p>
+    <p><strong>St. Paul’s School</strong> — 97% (Senior Secondary), 94.4% (Secondary)</p>
   </section>
 
-  <section id="experience">
+  <section id="experience" class="card">
     <h2>Experience</h2>
-    <p><strong>BS Thesis – Multi-Attribute Bias Mitigation</strong> – Worked on deep learning and fairness, introducing BAdd method to improve bias-conflicting accuracy.</p>
-    <p><strong>Summer Intern @ IISERB</strong> – Developed clustering-based unlearning techniques for unsupervised bias mitigation.</p>
-    <p><strong>Deep Learning Project</strong> – Explored QLoRA and bias metrics like demographic parity and equal opportunity.</p>
+    <ul>
+      <li>BS Thesis: Multi-attribute Bias Mitigation</li>
+      <li>Internship: Unlearning-based Bias Mitigation</li>
+      <li>Deep Learning Project on CMNIST with QLoRA</li>
+    </ul>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="card">
     <h2>Projects</h2>
     <ul>
-      <li><strong>MARL for Token Pruning (ViTs)</strong> — Reduced GFLOPs with PPO agents while maintaining high accuracy.</li>
-      <li><strong>Gravitational Wave Glitch Detection</strong> — Achieved 95% accuracy using SVM, RF, MLP etc.</li>
-      <li><strong>Real Estate Cost Prediction</strong> — Built regression model with R² = 0.71 using ensemble methods.</li>
+      <li>MARL for Token Pruning in ViTs (PPO-based)</li>
+      <li>Gravitational Wave Glitch Detection (SVM, MLP)</li>
+      <li>Real Estate Cost Predictor (R² = 0.71)</li>
     </ul>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="card">
     <h2>Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Python, C (CodeChef 3★)</li>
-      <li><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-learn, NumPy, Pandas, Matplotlib</li>
-      <li><strong>Tools:</strong> Git, Jupyter, Google Colab, SQL, Stata, VS Code, LaTeX</li>
-      <li><strong>OS:</strong> Linux, Windows, MacOS</li>
-      <li><strong>Soft Skills:</strong> Teamwork, Communication, Leadership</li>
-    </ul>
+    <p>Python, C, PyTorch, TensorFlow, SQL, Jupyter, Git, VS Code</p>
+    <p>Soft Skills: Communication, Teamwork, Leadership</p>
   </section>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>GATE DA 2025 AIR 49 (Score: 839)</li>
-      <li>GATE DA 2024 AIR 137 (Score: 753)</li>
-      <li>JEE Advanced & IAT Qualified | JEE Mains: 97 percentile</li>
-      <li>10.0 SPI in key subjects: Discrete Math, Signals and Systems</li>
-    </ul>
-  </section>
-
-  <section id="contact">
+  <section id="contact" class="card">
     <h2>Contact</h2>
-    <p><a href="mailto:ankur21@iiserb.ac.in">ankur21@iiserb.ac.in</a></p>
+    <p>Email: <a href="mailto:ankur21@iiserb.ac.in">ankur21@iiserb.ac.in</a></p>
     <p><a href="https://github.com/Aksh3141" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/ankur-kumar-a5a37b254" target="_blank">LinkedIn</a></p>
   </section>
 
