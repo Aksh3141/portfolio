@@ -28,10 +28,20 @@
     }
     nav {
       margin-top: 10px;
+      text-align: center;
     }
-    nav select {
-      padding: 10px;
-      font-size: 1rem;
+    nav .nav-link {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav .nav-link:hover {
+      color: #1abc9c;
+      text-decoration: underline;
+      cursor: pointer;
     }
     .hero {
       display: flex;
@@ -118,10 +128,10 @@
     <h1>Ankur Kumar</h1>
     <p>Postgraduate Student at IIT Delhi</p>
     <nav>
-  <a href="education.html" class="nav-link">Education</a>
-  <a href="experience.html" class="nav-link">Experience</a>
-  <a href="projects.html" class="nav-link">Projects</a>
-</nav>
+      <a href="education.html" class="nav-link">Education</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+    </nav>
   </header>
 
   <div class="hero">
@@ -182,8 +192,3 @@
   </footer>
 </body>
 </html>
-
-  </script>
-</body>
-</html>
-
