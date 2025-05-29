@@ -29,9 +29,11 @@
     nav {
       margin-top: 10px;
     }
-    nav select {
-      padding: 10px;
-      font-size: 1rem;
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
     .hero {
       display: flex;
@@ -55,23 +57,6 @@
       font-size: 1.2rem;
       margin-top: 10px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      animation: slideUp 1s ease-out;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.02);
-    }
     footer {
       background: #2c3e50;
       color: white;
@@ -86,10 +71,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
   </style>
 </head>
 <body>
@@ -97,67 +78,39 @@
     <h1>Ankur Kumar</h1>
     <p>Data Science & AI Researcher</p>
     <nav>
-      <select onchange="location = this.value;">
-        <option value="#">Navigate</option>
-        <option value="#about">About Me</option>
-        <option value="#education">Education</option>
-        <option value="#experience">Experience</option>
-        <option value="#projects">Projects</option>
-        <option value="#skills">Skills</option>
-        <option value="#contact">Contact</option>
-      </select>
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
     </nav>
   </header>
 
   <div class="hero">
-    <img src="images/profile.jpg" alt="Profile Picture">
+    <img id="profileImage" src="images/profile1.jpg" alt="Profile Picture">
     <h1>Hello, I'm <span style="color:#1abc9c">Ankur</span></h1>
-    <p>Welcome to my interactive portfolio!</p>
+    <p>Welcome to my portfolio!</p>
   </div>
-
-  <section id="about" class="card">
-    <h2>About Me</h2>
-    <p>I am a final-year Data Science student passionate about Deep Learning, Reinforcement Learning, and Bias Mitigation in AI models. I’ve worked on impactful research projects and enjoy solving real-world problems using machine learning.</p>
-  </section>
-
-  <section id="education" class="card">
-    <h2>Education</h2>
-    <p><strong>IISER Bhopal</strong> — BS in Data Science and Engineering (CPI: 9.03)</p>
-    <p><strong>St. Paul’s School</strong> — 97% (Senior Secondary), 94.4% (Secondary)</p>
-  </section>
-
-  <section id="experience" class="card">
-    <h2>Experience</h2>
-    <ul>
-      <li>BS Thesis: Multi-attribute Bias Mitigation</li>
-      <li>Internship: Unlearning-based Bias Mitigation</li>
-      <li>Deep Learning Project on CMNIST with QLoRA</li>
-    </ul>
-  </section>
-
-  <section id="projects" class="card">
-    <h2>Projects</h2>
-    <ul>
-      <li>MARL for Token Pruning in ViTs (PPO-based)</li>
-      <li>Gravitational Wave Glitch Detection (SVM, MLP)</li>
-      <li>Real Estate Cost Predictor (R² = 0.71)</li>
-    </ul>
-  </section>
-
-  <section id="skills" class="card">
-    <h2>Skills</h2>
-    <p>Python, C, PyTorch, TensorFlow, SQL, Jupyter, Git, VS Code</p>
-    <p>Soft Skills: Communication, Teamwork, Leadership</p>
-  </section>
-
-  <section id="contact" class="card">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ankur21@iiserb.ac.in">ankur21@iiserb.ac.in</a></p>
-    <p><a href="https://github.com/Aksh3141" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/ankur-kumar-a5a37b254" target="_blank">LinkedIn</a></p>
-  </section>
 
   <footer>
     <p>© 2025 Ankur Kumar</p>
   </footer>
+
+  <script>
+    const images = [
+      'images/profile1.jpg',
+      'images/profile2.jpg',
+      'images/profile3.jpg',
+      'images/profile4.jpg',
+      'images/profile5.jpg',
+      'images/profile6.jpg'
+    ];
+    let index = 0;
+    const imgElement = document.getElementById('profileImage');
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      imgElement.src = images[index];
+    }, 3000); // Change every 3 seconds
+  </script>
 </body>
 </html>
+
