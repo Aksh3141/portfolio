@@ -1,48 +1,93 @@
-<!-- projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Ankur Kumar</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f4f9ff;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
       color: #333;
-      padding: 20px;
+      overflow-x: hidden;
+      padding: 40px 20px;
+      animation: slideUp 1s ease-out;
     }
     h1 {
+      font-size: 2.5rem;
       color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
     }
-    .projects {
-      margin-top: 20px;
+    .project-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 20px auto;
+      transition: transform 0.3s;
     }
-    .item {
-      margin-bottom: 30px;
+    .project-card:hover {
+      transform: scale(1.02);
     }
-    .item h2 {
+    .project-card h2 {
       color: #1abc9c;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
+
   <h1>Projects</h1>
-  <div class="projects">
-    <div class="item">
-      <h2>MARL for Token Pruning in ViTs</h2>
-      <p>Multi-agent PPO-based RL framework to prune ViT tokens for efficient vision processing.</p>
-    </div>
-    <div class="item">
-      <h2>Gravitational Wave Glitch Detection</h2>
-      <p>Built models (SVM, MLP) to classify glitches from LIGO strain data.</p>
-    </div>
-    <div class="item">
-      <h2>Real Estate Price Predictor</h2>
-      <p>Regression model using housing dataset with R² = 0.71, deployed locally.</p>
-    </div>
+
+  <div class="project-card">
+    <h2>Multi-Agent RL for Token Pruning in Vision Transformers</h2>
+    <p>Designed a multi-agent reinforcement learning framework using PPO to selectively prune tokens in Vision Transformers (ViTs), reducing computation while preserving accuracy. Key aspects:</p>
+    <ul>
+      <li>Token importance learned via policy networks per attention head</li>
+      <li>Dynamic pruning strategies based on per-image complexity</li>
+      <li>Benchmarked with standard ViT models for performance-efficiency trade-offs</li>
+    </ul>
   </div>
+
+  <div class="project-card">
+    <h2>Gravitational Wave Glitch Detection</h2>
+    <p>Developed machine learning models to detect and classify glitches in LIGO strain sensor data. Highlights include:</p>
+    <ul>
+      <li>Preprocessing of time-series signals into spectrograms and statistical features</li>
+      <li>Implemented and compared SVM and MLP classifiers</li>
+      <li>Improved model interpretability using saliency maps and confusion matrix analysis</li>
+    </ul>
+  </div>
+
+  <div class="project-card">
+    <h2>Real Estate Price Prediction</h2>
+    <p>Built a regression-based price predictor using tabular housing data with spatial and categorical features.</p>
+    <ul>
+      <li>Handled missing values, feature encoding, and outlier correction</li>
+      <li>Trained models with regularized linear regression and random forest</li>
+      <li>Achieved R² score of 0.71; deployed a working demo locally</li>
+    </ul>
+  </div>
+
 </body>
 </html>
