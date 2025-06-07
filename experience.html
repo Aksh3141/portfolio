@@ -1,48 +1,95 @@
-<!-- experience.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Experience | Ankur Kumar</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f4f9ff;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
       color: #333;
-      padding: 20px;
+      overflow-x: hidden;
+      padding: 40px 20px;
+      animation: slideUp 1s ease-out;
     }
     h1 {
+      font-size: 2.5rem;
       color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
     }
-    .experience {
-      margin-top: 20px;
+    .exp-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 20px auto;
+      transition: transform 0.3s;
     }
-    .item {
-      margin-bottom: 30px;
+    .exp-card:hover {
+      transform: scale(1.02);
     }
-    .item h2 {
+    .exp-card h2 {
       color: #1abc9c;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .exp-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
+
   <h1>Experience</h1>
-  <div class="experience">
-    <div class="item">
-      <h2>BS Thesis - Multi-Attribute Bias Mitigation</h2>
-      <p>Designed and evaluated methods to address intersectional biases in deep models using fairness metrics and debiasing strategies.</p>
-    </div>
-    <div class="item">
-      <h2>Internship - Unlearning-Based Bias Mitigation</h2>
-      <p>Worked on unlearning-based methods in computer vision models to remove spurious feature dependency.</p>
-    </div>
-    <div class="item">
-      <h2>DL Project - CMNIST with QLoRA</h2>
-      <p>Implemented QLoRA on biased CMNIST dataset to test bias removal under constrained finetuning setups.</p>
-    </div>
+
+  <div class="exp-card">
+    <h2>BS Thesis — Multi-Attribute Bias Mitigation (IISER Bhopal)</h2>
+    <p>Developed a robust framework for mitigating bias in deep learning models when multiple spurious attributes co-occur. The key contributions included:</p>
+    <ul>
+      <li>Designed and implemented the <strong>BAdd</strong> (Bias Addition) and <strong>BGS</strong> (Bias Gradient Suppression) methods.</li>
+      <li>Introduced <strong>Weighted BAdd</strong> to adaptively inject bias features based on correlation with latent features.</li>
+      <li>Proposed a novel <strong>gradient suppression loss</strong> to minimize bias influence during fine-tuning.</li>
+      <li>Benchmarked performance across CMNIST, CelebA, and COCO datasets using <strong>SBA and MABA metrics</strong>.</li>
+      <li>Demonstrated state-of-the-art results in fairness generalization under spurious correlation shifts.</li>
+    </ul>
   </div>
+
+  <div class="exp-card">
+    <h2>Internship — Unlearning-Based Bias Mitigation</h2>
+    <p>Worked on developing debiasing pipelines using unlearning techniques to eliminate reliance on spurious attributes in visual classification tasks.</p>
+    <ul>
+      <li>Implemented dual-network frameworks where one model learns biased representations and the other corrects them.</li>
+      <li>Tested unlearning methods on CelebA with various gender-related attribute correlations.</li>
+      <li>Contributed to research discussions on feature forgetting and model fairness tradeoffs.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <h2>Project — CMNIST with QLoRA</h2>
+    <p>Applied <strong>QLoRA</strong> for low-rank adaptation on a color-biased MNIST variant (CMNIST) to explore efficient bias mitigation under resource constraints.</p>
+    <ul>
+      <li>Trained lightweight models to identify performance gaps between bias-aligned and bias-conflicting samples.</li>
+      <li>Conducted loss-based analysis and experimented with debiasing using representation-level interventions.</li>
+      <li>Evaluated outcomes with custom test splits designed for controlled bias ratio settings.</li>
+    </ul>
+  </div>
+
 </body>
 </html>
