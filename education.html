@@ -19,33 +19,34 @@
       padding: 40px 20px;
       animation: slideUp 1s ease-out;
     }
-    .card {
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .edu-card {
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       max-width: 900px;
-      margin: auto;
+      margin: 20px auto;
       transition: transform 0.3s;
     }
-    .card:hover {
+    .edu-card:hover {
       transform: scale(1.02);
     }
-    h1 {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    .edu-item {
-      margin-bottom: 25px;
-    }
-    .edu-item h2 {
+    .edu-card h2 {
       color: #1abc9c;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
-    .edu-item p {
+    .edu-card ul {
+      padding-left: 20px;
+      color: #555;
+    }
+    .edu-card p {
       font-size: 1rem;
       color: #555;
     }
@@ -57,51 +58,37 @@
 </head>
 <body>
 
-  <div class="card">
   <h1>Education</h1>
 
-  <div class="edu-item">
+  <div class="edu-card">
     <h2>IIT Delhi (Postgraduate)</h2>
-    <p>Currently pursuing a research-focused postgraduate program in Artificial Intelligence and Machine Learning, covering topics such as:
-      <ul>
-        <li>Multi-Agent Reinforcement Learning</li>
-        <li>Advanced Deep Learning</li>
-        <li>Natural Language Processing</li>
-        <li>Accelerated AI Applications</li>
-        <li>Game Theory, Competitive Programming</li>
-      </ul>
-    </p>
+    <p>Research-focused program in Artificial Intelligence and Machine Learning with courses like:</p>
+    <ul>
+      <li>Multi-Agent Reinforcement Learning</li>
+      <li>Advanced Deep Learning</li>
+      <li>Natural Language Processing</li>
+      <li>Accelerated AI Applications</li>
+      <li>Game Theory, Competitive Programming</li>
+    </ul>
   </div>
 
-  <div class="edu-item">
+  <div class="edu-card">
     <h2>IISER Bhopal</h2>
-    <p>BS in Data Science and Engineering with coursework in:
-      <ul>
-        <li>Core Mathematics: Calculus, Linear Algebra, Complex Variables, Probability & Statistics, Optimization</li>
-        <li>Core CS: Data Structures & Algorithms, Theory of Computation, Computer Vision, Database Systems</li>
-        <li>AI/ML Focus: Machine Learning, Deep Learning, Artificial Intelligence, Applied Optimization</li>
-        <li>Engineering Sciences: Thermodynamics, Process Calculations, Electronics, Environmental Sciences</li>
-        <li>Project Work in Bias Mitigation and AI Systems</li>
-      </ul>
-    </p>
+    <p>BS in Data Science and Engineering with an emphasis on:</p>
+    <ul>
+      <li>Mathematics: Calculus, Linear Algebra, Complex Variables, Probability & Statistics</li>
+      <li>Computer Science: DSA, TOC, Databases, Optimization, Vision, AI</li>
+      <li>Machine Learning, Deep Learning, Artificial Intelligence</li>
+      <li>Engineering: Thermodynamics, Electronics, Environmental Sciences</li>
+      <li>Capstone Thesis on Bias Mitigation in AI</li>
+    </ul>
   </div>
 
-  <div class="edu-item">
+  <div class="edu-card">
     <h2>St. Paul’s School, New Delhi</h2>
-    <p><strong>Senior Secondary (CBSE – 12th):</strong>
-      <ul>
-        <li>Subjects: Physics, Chemistry, Mathematics, Computer Science, English Core</li>
-        <li>Co-scholastics: Physical Education, Work Experience, General Studies</li>
-      </ul>
-    </p>
-    <p><strong>Secondary (CBSE – 10th):</strong>
-      <ul>
-        <li>Subjects: English, Hindi, Mathematics, Science, Social Science</li>
-      </ul>
-    </p>
+    <p><strong>Senior Secondary:</strong> Physics, Chemistry, Mathematics, Computer Science, English</p>
+    <p><strong>Secondary School:</strong> English, Hindi, Mathematics, Science, Social Science</p>
   </div>
-</div>
 
 </body>
 </html>
-
